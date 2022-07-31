@@ -1,0 +1,49 @@
+<f:variable name="gray" value="{data.tx_mask_gray}"/>
+<f:if condition="{gray}">
+    <f:then>
+        <div class="gray-background full-container course-full-container">
+    </f:then>
+    <f:else>
+        <div class="full-container course-full-container">
+    </f:else>
+</f:if>
+<div class="container section-header">
+    <f:if condition="{data.tx_mask_headline}">
+        <h2 class="header">{data.tx_mask_headline}</h2>
+    </f:if>
+    <f:if condition="{data.tx_mask_description_}">
+        <p>{data.tx_mask_description_ -> f:format.nl2br()}</p>
+    </f:if>
+</div>
+    <f:if condition="{data.tx_mask_course}">
+        <div class="container">
+            <div class="boxes">
+                <f:for each="{data.tx_mask_course}" as="data_item">
+                        <div class="box course-box">
+                            <f:if condition="{data_item.tx_mask_link}">
+                                <f:link.typolink parameter="{data_item.tx_mask_link}">
+                            <f:for each="{data_item.tx_mask_image}" as="file">
+                                <div class="box-container" style="background-image: url({file.publicUrl});">
+                            </f:for>
+                                    <div class="overview">
+                                        <f:if condition="{data_item.tx_mask_name}">
+                                            <h3>{data_item.tx_mask_name}</h3>
+                                        </f:if>
+                                        <f:if condition="{data_item.tx_mask_bis}">
+                                            <f:then>
+                                                <p class="start-date">von {data_item.tx_mask_von -> f:format.date(format: 'd.m')} bis {data_item.tx_mask_bis -> f:format.date(format: 'd.m.Y')}</p>
+                                            </f:then>
+                                            <f:else>
+                                                <p class="start-date">am {data_item.tx_mask_von -> f:format.date(format: 'd.m.Y')}</p>
+                                            </f:else>
+                                        </f:if>
+                                    </div>
+                                </f:link.typolink>
+                            </f:if>
+                        </div>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+    </f:if>
+</div>

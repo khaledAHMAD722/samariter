@@ -1,0 +1,66 @@
+<f:variable name="gray" value="{data.tx_mask_gray}"/>
+<f:if condition="{gray}">
+    <f:then>
+        <div class="gray-background full-container">
+    </f:then>
+    <f:else>
+        <div class="full-container">
+    </f:else>
+</f:if>
+    <div class="container section-header">
+        <f:if condition="{data.tx_mask_hedline}">
+            <h2 class="header">{data.tx_mask_hedline}</h2>
+        </f:if>
+        <f:if condition="{data.tx_mask_description}">
+            <p>{data.tx_mask_description -> f:format.nl2br()}</p>
+        </f:if>
+    </div>
+    <f:if condition="{data.tx_mask_box}">
+            <div class="container">
+                <f:variable name="smallBox" value="{data.tx_mask_small_box}"/>
+                <f:if condition="{smallBox}">
+                    <f:then>
+                        <div class="boxes small-box">
+                    </f:then>
+                    <f:else>
+                        <div class="boxes">
+                    </f:else>
+                </f:if>
+                    <f:for each="{data.tx_mask_box}" as="data_item">
+                        <div class="box">
+                            <f:link.typolink parameter="{data_item.tx_mask_link}">
+                                <f:if condition="{data_item.tx_mask_image}">
+                                    <f:then>
+                                        <f:for each="{data_item.tx_mask_image}" as="file">
+                                            <div class="box-container" style="background-image: url({file.publicUrl});">
+                                        </f:for>
+                                    </f:then>
+                                    <f:else>
+                                        <div class="box-container">
+                                    </f:else>
+                                </f:if>
+                                <div class="overview"></div>
+                                    <f:if condition="{data_item.tx_mask_headline}">
+                                        <h3>{data_item.tx_mask_headline}</h3>
+                                    </f:if>
+                                </div>
+                        </f:link.typolink>
+                        </div>
+                    </f:for>
+                    <f:variable name="moreBox" value="{data.tx_mask_more_box}"/>
+                    <f:if condition="{moreBox}">
+                        <div class="box more-box">
+                            <f:if condition="{data.tx_mask_more_box_link}">
+                                <f:link.typolink parameter="{data.tx_mask_more_box_link}">
+                                <div class="box-container">
+                                    <h3>{data.tx_mask_more_box_title}</h3>
+                                    <i class="fa fa-arrow-right"></i>
+                                </div>
+                                </f:link.typolink>
+                            </f:if>
+                        </div>
+                    </f:if>
+                </div>
+            </div>
+    </f:if>
+</div>

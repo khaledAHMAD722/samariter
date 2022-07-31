@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+<div id="top"></div>
+<div class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')}">
+
+    <f:render partial="DropIn/Page/PageBefore" arguments="{_all}" />
+    <f:render partial="Structure/CookieConsent" arguments="{_all}" />
+    <a class="visually-hidden-focusable" href="#page-content">
+        <span>{f:translate(key: 'skiptomaincontent', extensionName: 'bootstrap_package')}</span>
+    </a>
+    <f:render partial="Navigation/Main" arguments="{_all}" />
+    <f:render section="Border" optional="true" />
+    <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
+
+    <div id="page-content" class="bp-page-content main-section">
+        <!--TYPO3SEARCH_begin-->
+        <f:render section="Main" />
+        <!--TYPO3SEARCH_end-->
+    </div>
+
+    <footer id="page-footer" class="bp-page-footer">
+        <div class="container footer-container">
+            <div class="page-map footer-box">
+                <h2>Pages</h2>
+                <ul>
+                    <li><a href="/">Home & News</a></li>
+                    <li><a href="/ehrenamt-engagement">Ehrenamt & Engagement </a></li>
+                    <li><a href="/leistungen-kurse">Leistungen & Kurse</a></li>
+                    <li><a href="/ueber-uns">Über uns</a></li>
+                    <li><a href="/kontakt-vorstand">Kontakt & Vorstand</a></li>
+                    <li><a href="/links">Links</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact footer-box">
+                <h2>Kontakt</h2>
+                <ul>
+                    <li><a href="tel:+43 1 726 19 02">Tel: +43 1 726 19 02</a></li>
+                    <li><a target="_blank" href="https://www.google.com/maps?q=samariterbund+leopoldstadt&um=1&ie=UTF-8&sa=X&ved=2ahUKEwi9qrPzrqD5AhWgX_EDHRQTCvYQ_AUoAnoECAIQBA">Addresse: Große Stadtgutgasse 28, 1020 Wien</a></li>
+                    <li><a href="mailto:office@samariter-leopoldstadt.at">E-Mail: office@samariter-leopoldstadt.at</a></li>
+                    <li style="margin-top: 1rem"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.320330147557!2d16.382300315651893!3d48.21970607923007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07a81906be5b%3A0xc08cd9c76a718cfb!2sArbeiter%20Samariterbund%20%C3%96sterreich%20-%20Gruppe%20Leopoldstadt!5e0!3m2!1sen!2sat!4v1659055607755!5m2!1sen!2sat" width="100%" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+                </ul>
+            </div>
+            <div class="about-us footer-box">
+                <h2>Samariterbund Leopoldstadt</h2>
+                <ul>
+                    <li><a href="/ueber-uns/das-team">Team</a></li>
+                    <li><a href="/ueber-uns/jobs">Job</a></li>
+                    <li><a href="/spenden-stiften">Spenden</a></li>
+                </ul>
+            </div>
+            <div class="social-media footer-box">
+                <h2>Follow us on:</h2>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="handala-container">
+            <div class="container">
+                <p>© 2022 Samariterbund Leopoldstadt</p>
+                <p>by <a target="_blank" href="https://handala-design.com">Handala-design</a></p>
+            </div>
+        </div>
+    </footer>
+    <f:render partial="Structure/ScrollTop" arguments="{_all}" />
+    <f:render partial="DropIn/Page/PageAfter" arguments="{_all}" />
+
+</div>
+</f:spaceless>
+</html>

@@ -1,0 +1,22 @@
+<f:if condition="{data.tx_mask_link}">
+    <div class="container">
+        <div class="links">
+            <f:for each="{data.tx_mask_link}" as="data_item">
+                <div class="link">
+                    <f:if condition="{data_item.tx_mask_link}">
+                        <f:link.typolink parameter="{data_item.tx_mask_link}">
+                    <f:for each="{data_item.tx_mask_image}" as="file">
+                        <div class="link-image">
+                            <f:image image="{file}" />
+                        </div>
+                    </f:for>
+                    <f:if condition="{data_item.tx_mask_name}">
+                        <h2>{data_item.tx_mask_name}</h2>
+                    </f:if>
+                        </f:link.typolink>
+                    </f:if>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:if>

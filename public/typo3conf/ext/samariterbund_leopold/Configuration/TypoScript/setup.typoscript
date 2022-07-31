@@ -1,0 +1,36 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
+
+
+##############
+#### PAGE ####
+##############
+page {
+    includeCSS {
+        theme = EXT:samariterbund_leopold/Resources/Public/Scss/Theme/theme.scss
+        css = https://use.fontawesome.com/releases/v5.8.1/css/all.css
+        css {
+          external = 1
+          media = all
+          excludeFromConcatenation = 1
+        }
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {
+        samariterbund_leopold_scripts = EXT:samariterbund_leopold/Resources/Public/JavaScript/Dist/scripts.js
+    }
+}

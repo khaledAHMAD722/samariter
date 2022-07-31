@@ -1,30 +1,13 @@
 <?php
 return [
     'BE' => [
-        'debug' => false,
         'explicitADmode' => 'explicitAllow',
-        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$TWx0bzZLVDdPeTV5cGZZcg$WjOlwOtAU2m99ng0JX1qjLrjuI3EV1duQK6A74SN8nI',
-        'languageDebug' => false,
-        'passwordHashing' => [
-            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
-            'options' => [],
-        ],
     ],
     'DB' => [
         'Connections' => [
             'Default' => [
                 'charset' => 'utf8',
                 'driver' => 'mysqli',
-            ],
-        ],
-    ],
-    'EXT' => [
-        'allowGlobalInstall' => true,
-    ],
-    'EXTCONF' => [
-        'lang' => [
-            'availableLanguages' => [
-                'de',
             ],
         ],
     ],
@@ -50,7 +33,7 @@ return [
         ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
-            'offlineMode' => '1',
+            'offlineMode' => '0',
         ],
         'indexed_search' => [
             'catdoc' => '/usr/bin/',
@@ -75,18 +58,18 @@ return [
             'xlhtml' => '/usr/bin/',
         ],
         'mask' => [
-            'backend' => 'typo3conf/ext/mask/Resources/Private/Mask/Backend/Templates',
+            'backend' => '',
             'backend_layouts_folder' => '',
             'backendlayout_pids' => '0',
-            'content' => 'typo3conf/ext/mask/Resources/Private/Mask/Frontend/Templates',
+            'content' => '',
             'content_elements_folder' => '',
-            'json' => 'typo3conf/ext/mask/Configuration/Mask/mask.json',
-            'layouts' => 'typo3conf/ext/mask/Resources/Private/Mask/Frontend/Layouts',
-            'layouts_backend' => 'typo3conf/ext/mask/Resources/Private/Mask/Backend/Layouts',
-            'loader_identifier' => 'json',
-            'partials' => 'typo3conf/ext/mask/Resources/Private/Mask/Frontend/Partials',
-            'partials_backend' => 'typo3conf/ext/mask/Resources/Private/Mask/Backend/Partials',
-            'preview' => 'typo3conf/ext/mask/Resources/Private/Mask/',
+            'json' => '',
+            'layouts' => '',
+            'layouts_backend' => '',
+            'loader_identifier' => '',
+            'partials' => '',
+            'partials_backend' => '',
+            'preview' => '',
         ],
         'news' => [
             'advancedMediaPreview' => '1',
@@ -109,88 +92,14 @@ return [
         ],
     ],
     'FE' => [
-        'debug' => false,
         'disableNoCacheParameter' => true,
-        'passwordHashing' => [
-            'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
-            'options' => [],
-        ],
-    ],
-    'GFX' => [
-        'processor' => 'GraphicsMagick',
-        'processor_allowTemporaryMasksAsPng' => false,
-        'processor_colorspace' => 'RGB',
-        'processor_effects' => false,
-        'processor_enabled' => true,
-        'processor_path' => '/usr/bin/',
-        'processor_path_lzw' => '/usr/bin/',
-    ],
-    'LOG' => [
-        'TYPO3' => [
-            'CMS' => [
-                'deprecations' => [
-                    'writerConfiguration' => [
-                        'notice' => [
-                            'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
-                                'disabled' => true,
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-    ],
-    'MAIL' => [
-        'transport' => 'sendmail',
-        'transport_sendmail_command' => '/usr/local/bin/mailhog sendmail test@example.org --smtp-addr 127.0.0.1:1025',
-        'transport_smtp_encrypt' => '',
-        'transport_smtp_password' => '',
-        'transport_smtp_server' => '',
-        'transport_smtp_username' => '',
     ],
     'SYS' => [
-        'caching' => [
-            'cacheConfigurations' => [
-                'hash' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
-                ],
-                'imagesizes' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
-                    'options' => [
-                        'compression' => true,
-                    ],
-                ],
-                'pages' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
-                    'options' => [
-                        'compression' => true,
-                    ],
-                ],
-                'pagesection' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
-                    'options' => [
-                        'compression' => true,
-                    ],
-                ],
-                'rootline' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
-                    'options' => [
-                        'compression' => true,
-                    ],
-                ],
-            ],
-        ],
-        'devIPmask' => '',
-        'displayErrors' => 0,
-        'encryptionKey' => '3ebe9e7806c91c6db112ccf86cb8f83a5cf5fef7b9e2d16e732335870056d20e075c3cabe5a9b97b487ed81f117d10c7',
-        'exceptionalErrors' => 4096,
+        'encryptionKey' => 'd881d5252b3d93c1d5b4db57a34ad8814bf64017b5605dda0b4961ce15496347ef0803b7157456b5793b82fd3470ae68',
         'features' => [
             'unifiedPageTranslationHandling' => true,
             'yamlImportsFollowDeclarationOrder' => true,
         ],
-        'sitename' => 'Samariterbund-leopold',
-        'systemMaintainers' => [
-            1,
-        ],
+        'sitename' => 'New TYPO3 site',
     ],
 ];

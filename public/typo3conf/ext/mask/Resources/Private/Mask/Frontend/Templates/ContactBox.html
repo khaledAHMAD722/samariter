@@ -1,0 +1,39 @@
+<f:variable name="gray" value="{data.tx_mask_gray}"/>
+<f:if condition="{gray}">
+    <f:then>
+        <div class="gray-background full-container contact-full-container">
+    </f:then>
+    <f:else>
+        <div class="full-container contact-full-container">
+    </f:else>
+    </f:if>
+    <div class="contact-box">
+        <div class="contact-box-image">
+            <f:if condition="{data.tx_mask_name}">
+                <h2 class="contact-header">Kontakt</h2>
+            </f:if>
+            <f:for each="{data.tx_mask_person}" as="file">
+                <f:image image="{file}" />
+                {file.description}
+            </f:for>
+        </div>
+        <div class="contact-box-info">
+            <f:if condition="{data.tx_mask_name}">
+                <h3>{data.tx_mask_name}</h3>
+            </f:if>
+            <f:if condition="{data.tx_mask_position}">
+                <p>{data.tx_mask_position}</p>
+            </f:if>
+            <div class="space"></div>
+            <f:if condition="{data.tx_mask_tel}">
+                <p><span>Tel:</span><a href="tel:{data.tx_mask_tel}">{data.tx_mask_tel}</a></p>
+            </f:if>
+            <f:if condition="{data.tx_mask_email}">
+                <p><span>E-mail:</span><a href="mailto:{data.tx_mask_email}">{data.tx_mask_email}</a></p>
+            </f:if>
+            <f:if condition="{data.tx_mask_address}">
+                <p><span>Addresse:</span>{data.tx_mask_address}</p>
+            </f:if>
+        </div>
+    </div>
+</div>
