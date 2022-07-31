@@ -6,8 +6,16 @@ return [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8',
+                'charset' => 'utf8mb4',
                 'driver' => 'mysqli',
+                'host' => '127.0.0.1',
+                'password' => '',
+                'port' => 3306,
+                'tableoptions' => [
+                    'charset' => 'utf8mb4',
+                    'collate' => 'utf8mb4_unicode_ci',
+                ],
+                'user' => '',
             ],
         ],
     ],

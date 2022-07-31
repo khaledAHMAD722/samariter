@@ -204,3 +204,6 @@ nodejs_version: "16"
 #hooks:
 #  post-start:
 #    - exec: composer install -d /var/www/html
+
+  - name: Setup ddev
+    uses: jonaseberle/github-action-setup-ddev@v1.5.0
